@@ -126,3 +126,9 @@ f(tab, "en", "#category_physics", "Physics Manipulation")
 f(tab, "en", "#category_protecting", "Protecting Spells")
 f(tab, "en", "#category_special", "Special Spells")
 f(tab, "en", "#category_unforgivable", "Unforgivable Spells")
+
+-- Blacklist/Whitelist
+f(tab, "en", "#blacklist_job", "Your job is blacklisted")
+f(tab, "en", "#blacklist_group", "Your group is blacklisted")
+f(tab, "en", "#whitelist_job", "Your job is not whitelisted")
+f(tab, "en", "#whitelist_group", "Your group is not whitelisted")
