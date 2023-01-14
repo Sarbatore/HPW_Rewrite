@@ -127,3 +127,9 @@ f(tab, "ru", "#category_physics", "Физические заклинания")
 f(tab, "ru", "#category_protecting", "Защищающие заклинания")
 f(tab, "ru", "#category_special", "Специальные заклинания")
 f(tab, "ru", "#category_unforgivable", "Непростительные заклятия")
+
+-- Blacklist/Whitelist
+f(tab, "ru", "#blacklist_job", "Your job is blacklisted")
+f(tab, "ru", "#blacklist_group", "Your group is blacklisted")
+f(tab, "ru", "#whitelist_job", "Your job is whitelisted")
+f(tab, "ru", "#whitelist_group", "Your group is whitelisted")
