@@ -7,12 +7,12 @@ Spell.CanSelfCast = false
 Spell.ForceDelay = 2
 
 /* --------------------------------------------------------------------------------------------------------------------------------
-    Explication: Si je suis dans la TEAM_GRYFFONDOR mais que j'ai le groupe superadmin, alors je ne pourrai pas utiliser le sort --
+               Check the Wiki if you don't understand this new config: https://github.com/Sarbatore/HPW_Rewrite/wiki
 -------------------------------------------------------------------------------------------------------------------------------- */
-Spell.GroupPriority = true -- Si oui, la config du groupe sera prioritaire à celle du job
-Spell.IsJobBlacklist = false -- Si non, alors c'est une Whitelist
+Spell.GroupPriority = true
+Spell.IsJobBlacklist = false
 Spell.Jobs = {TEAM_GRYFFONDOR01}
-Spell.IsGroupBlacklist = true -- Si non, alors c'est une Whitelist
+Spell.IsGroupBlacklist = true
 Spell.Groups = {"superadmin"}
 
 Spell.Description = [[
