@@ -1060,7 +1060,27 @@ function SWEP:PrimaryAttack(spellName)
 	if curspell.ForceDelay then self:SetNextPrimaryFire(CurTime() + curspell.ForceDelay) end
 
 	-- Fire, fire, FIRE !!!
-	if SERVER and not self.Owner.HpwRewrite.BlockSpelling then -- The second expression is for Mimblewimble and so on
+	if SERVER and not self.Owner.HpwRewrite.BlockSpelling then -- The second expression is for Mimblewimble and so on		
+		
+		-- Sarbatore: Don't allow people using this spell
+		if curspell.Jobs or curspell.Groups then
+
+			-- If in the blacklist
+			if curspell.IsJobBlacklist and curspell.Jobs and table.HasValue(curspell.Jobs, self.Owner:Team()) and not curspell.GroupPriority then
+				return self.Owner:ChatPrint(HpwRewrite.Language:GetWord("#blacklist_job"))
+			elseif curspell.IsGroupBlacklist and curspell.Groups and table.HasValue(curspell.Groups, self.Owner:GetUserGroup()) then
+				return self.Owner:ChatPrint(HpwRewrite.Language:GetWord("#blacklist_group"))
+			end
+				
+			-- If not in the whitelist
+			if not curspell.IsJobBlacklist and curspell.Jobs and not table.HasValue(curspell.Jobs, self.Owner:Team()) and not curspell.GroupPriority then
+				return self.Owner:ChatPrint(HpwRewrite.Language:GetWord("#whitelist_job"))
+			elseif not curspell.IsGroupBlacklist and curspell.Groups and not table.HasValue(curspell.Groups, self.Owner:GetUserGroup()) then
+				return self.Owner:ChatPrint(HpwRewrite.Language:GetWord("#whitelist_group"))
+			end
+
+		end
+		
 		skintab:OnFire(self)
 
 		if curspell:PreFire(self) then
