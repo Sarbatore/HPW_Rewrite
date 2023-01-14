@@ -3,6 +3,7 @@
 French Translations added
 
 Blacklist/Whitelist jobs/groups from using spells added
+
 One more spell
 
 ### License
