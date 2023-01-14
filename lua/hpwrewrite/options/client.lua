@@ -10,6 +10,7 @@ local fonts = {
 
 local languages = {
 	["English"] = "en",
+	["Français"] = "fr",
 	["Russian"] = "ru"
 }
 
