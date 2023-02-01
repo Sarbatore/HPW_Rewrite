@@ -42,12 +42,14 @@ end
 function Spell:AfterCollide(spell, data)
 	local ent = data.HitEntity
 
-	if IsValid(ent) and (ent:IsPlayer() or ent:IsNPC()) then
-        if ent:getDarkRPVar("Arrested") then
-            ent:unArrest()
-        else
-            ent:arrest()
-        end
+	if IsValid(ent) and ent:IsPlayer() then
+		if CLIENT then return end
+	
+        	if ent:getDarkRPVar("Arrested") then
+            		ent:unArrest()
+        	else
+            		ent:arrest()
+        	end
 	end
 
 end
